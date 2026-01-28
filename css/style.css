@@ -1,0 +1,353 @@
+/*initialisation du projet*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*Declaration des variables*/
+html{
+    --var-bg-color: #7743e9;
+    --var-secondary-color: #6e51cf;
+    --var-text-color: #fff;
+    --var-text-color-dark: #333;
+    --var-bg-light: #f0f4ff;
+    --var-bg-dark:#d3c9f3;
+}
+body{
+    font-family:'Times New Roman', Times, serif;
+    background-color: var(--var-bg-light);
+
+}
+header{
+    height:4rem ;
+    background-color: #fff;
+    padding: 0 2rem;
+    text-align: center;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    box-shadow: inset 0px 0px 10px #6e51cf;
+    position: sticky;
+    top:0px;
+    width: 100%;
+    z-index: 100;
+}
+header nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+    gap: 1rem;
+}
+header nav ul li a{
+    text-decoration: none;
+    color: var(--var-text-color-dark);
+    font-weight: 500;
+}
+header nav ul li a:hover{
+    color: var(--var-secondary-color);
+}
+header button{
+    background-color: var(--var-secondary-color);
+    color: var(--var-text-color);
+    border: none;
+    padding: 0.7rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+}
+header button:hover{
+    background-color:var(--var-text-color);
+    color: var(--var-text-color-dark);
+    border: 10px solid var(--var-secondary-color)
+}
+/*Mise en forme de main*/
+main{
+    padding: 2rem;
+}
+#hero{
+    width: 100%;
+    height: 70vh;
+    border-radius: 5px;
+    padding: 1rem;
+    background-color: #6e51cf;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#hero .gauche h1{
+    font-size:3rem ;
+    font-weight: 900;
+    color: var(--var-text-color);
+}
+#hero .gauche p{
+    font-size: clamp(1rem,2vw,1rem);
+    color: var(--var-text-color);
+}
+#hero .gauche button{
+    background-color: #fff;
+    color: var(--var-text-color-dark);
+    margin-top: 1.4rem;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 1rem;
+}
+#hero .droite{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 50;
+}
+#hero .droite img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.effets{
+    width: 100%;
+    height: 100%;
+    position: absolute ;
+}
+.effets .cercle{
+    width: 100px;
+    height: 100px;
+    border-radius:50%;
+    animation: transition 4s ease-in infinite;
+    /*background-color: #d3c9f3;*/
+}
+.cercle:nth-child(1){
+        background: linear-gradient(90deg, var(--var-bg-color)15%,#9b8dc8 100%);
+        position: absolute;
+        right: 10px;
+        animation-delay: 1s;
+}
+.cercle:nth-child(2){
+        background: linear-gradient(90deg, var(--var-bg-color)15%,#9b8dc8 100%);
+        position: absolute;
+        left: 10px;
+        animation-delay: 2s;
+
+}
+.cercle:nth-child(3){
+        background: linear-gradient(90deg, var(--var-bg-color)15%,#9b8dc8 100%);
+        position: absolute;
+        top: 30px;
+        left: 10px;
+        animation-delay: 3s;
+
+}
+@keyframes transition {
+    0%{
+        transform:translateY(0);
+    }
+    50%{
+        transform: translateY(100px) ;
+    }
+    100%{
+        transform:translateY(0);
+    }
+    
+}
+/*mise en forme de section service*/
+#service{
+    margin-top: 2rem;
+}
+#service h2{
+    font-size: 2rem;
+    font-weight:900 ;
+    color: var(--var-text-color-dark);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+#service .service-list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:1rem;
+}
+.service-list .card-service{
+    flex: 1;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+    position: relative;
+    margin-top: 3rem ;
+}
+.card-service .icon{
+    width: 50px;
+    height: 50px;
+    background-color: #ccb6fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    position: absolute;
+    top: -25px;
+}
+.card-service .icon i{
+    font-size: 1.3rem;
+    color: var(--var-text-color);
+}
+.card-service h3{
+    margin-top: 1rem;
+}
+/*Mise en forme de la partie album*/
+#album{
+    margin-top: 2rem;
+}
+#album h2{
+    font-size: 2rem;
+    font-weight:900;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+#album .photo{
+    display: grid;
+    grid-template-columns:repeat(2,1fr) ;
+    gap: 1rem;
+}
+.photo img{
+    width: 100%;
+    border-radius: 5px;
+}
+#contact{
+    margin-top: 3rem;
+    display: flex;
+    height: calc(100vh - 200px);
+    background-color:#fff;
+}
+#contact .partie1, .partie2{
+    flex: 1;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    position: relative;
+    padding: 1rem;
+    height: 100%;
+}
+#contact .partie1{
+    background-color: #ccb6fa;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#contact   h2{
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--var-text-color-dark);
+    margin-bottom:1rem ;
+    text-align: center;
+}
+#contact .partie2 form{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+.partie2 form input, textarea{
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+    outline: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition:0.3s;
+}
+.partie2 form textarea{
+    height: 100px;
+}
+.partie2 form input:focus , textarea:focus
+{
+    border: 1px solid var(--var-bg-color);
+}
+.partie2 form button{
+    background-color: var(--var-bg-color);
+    color: var(--var-text-color);
+    border: none;
+    border-radius: 0.3rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+    height: 25px;
+}
+.partie2 form button:hover{
+    background-color: var(--var-secondary-color);
+}
+/*Mise en forme du footer*/
+footer{
+    width: 100%;
+    height: 100px;
+    background-color: var(--var-text-color);
+    display: flex;
+    margin-top: 2rem;
+    align-items: center;
+    justify-content: center ;
+    color: var(--var-text-color-dark);
+}
+.reseau{
+    position: fixed;
+    right: 0;
+    bottom: 3rem;
+    background-color: #ccb6fa;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column ;
+    gap: 5px;
+}
+.reseau .carte{
+    width: 30px;
+    height: 30px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+.reseau .carte:hover{
+    background-color:#fff;
+    border-radius: 2px;
+}
+/*medias queries*/
+@media screen and (max-width:768px) {
+   header nav {
+    display: none;
+   }
+   main{
+    padding: 1rem;
+   }
+   #hero{
+    flex-direction: column;
+    min-height: 100vh;
+    gap: 20px;
+   }
+   #hero .gauche h1{
+    font-size: 40px;
+    text-align: center;
+   }
+   .gauche{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   }
+   /*services*/
+   #service .service-list{
+    flex-direction: column;
+    gap: 2rem;
+   }
+   #contact{
+    flex-direction: column;
+    min-height:100vh;
+    margin-bottom: 2rem; 
+  }
+}
+
+
